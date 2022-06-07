@@ -16,7 +16,7 @@ USER = os.environ["USERNAME"]
 # ContentDeliveryManager_ directory. Define the storage directory.
 SOURCE = glob.glob(
     "C:\\Users\\" + USER + "\\AppData\\Local\\Packages\\Microsoft.Windows.ContentDeliveryManager_*\\LocalState\\Assets")
-DEST = "C:\\Users\\" + USER + "\\Pictures\\Spotlight"
+DEST = "C:\\Users\\" + USER + "\\OneDrive\\Pictures\\Spotlight"
 
 # Create the storage directory if it doesn't already exist.
 if not os.path.exists(DEST):
@@ -36,6 +36,7 @@ for dirname, dirnames, filenames in os.walk(SOURCE[0]):
     for filename in filenames:
         if os.stat(os.path.join(dirname, filename)).st_size > 200000 and not filename in blacklisted_items  :
             print(os.path.join(dirname, filename))
+            print("{0}\\{1}.bmp".format(DEST, filename))
             shutil.copyfile(os.path.join(dirname, filename),
                             DEST + "\\" + filename + ".bmp")
             shutil.copyfile(os.path.join(dirname, filename),

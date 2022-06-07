@@ -89,7 +89,7 @@ if whr[3][0:len(whr[3]) - 4] != tmp[9]:
     USER = os.environ["USERNAME"]
 
     # Create the location of the copied image
-    val = "C:\\Users\\"+USER+"\\Pictures\\Spotlight\\" + tmp[9] + ".bmp"
+    val = "C:\\Users\\"+USER+"\\OneDrive\\Pictures\\Spotlight\\" + tmp[9] + ".bmp"
     print(val)
 
     # subprocess.call("rundll32.exe user32.dll, UpdatePerUserSystemParameters")
